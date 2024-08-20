@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Boolean values")]
     public bool isRunning;
+    public bool isLeft;
 
     private void Start()
     {
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
         float movement = Input.GetAxis("Horizontal");
         transform.position += new Vector3(movement, 0, 0) * playerSpeed * Time.deltaTime;
 
-        if(movement == 0)
+        if (movement == 0)
         {
             isRunning = false;
         }
@@ -44,7 +45,18 @@ public class PlayerController : MonoBehaviour
         if (isRunning) animator.SetBool("run", true);
         else animator.SetBool("run", false);
 
-        sr.flipX = movement < 0 ? true : false;
+
+        if (Input.GetAxis("Horizontal") > 0)
+        {
+            isLeft = false;
+            sr.flipX = false;
+        }
+        else if (Input.GetAxis("Horizontal") < 0)
+        {
+            isLeft = true;
+            sr.flipX = true;
+        }
+        
     }
     public void Jump()
     {
