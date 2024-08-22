@@ -201,6 +201,7 @@ MonoBehaviour:
   animator: {fileID: 7362770353146476460}
   isRunning: 0
   isLeft: 0
+  doubleJump: 0
 --- !u!114 &1680563100502123949
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -213,5 +214,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdb1453b5f0f6f94ead45a93763d8332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  DisappearanceTime: 5
   bullet: {fileID: 828736042079153242, guid: 52b76c50c83754f4890db2557dd4fdf3, type: 3}
