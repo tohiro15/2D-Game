@@ -16,6 +16,7 @@ public class PlayerController : MonoBehaviour
     [Header("Boolean values")]
     public bool isRunning;
     public bool isLeft;
+    public bool doubleJump = false;
 
     private void Start()
     {
@@ -60,14 +61,22 @@ public class PlayerController : MonoBehaviour
     }
     public void Jump()
     {
-        if (Input.GetKeyDown(KeyCode.W) && Mathf.Abs(rb.velocity.y) < 0.05f)
+        if (Input.GetKeyDown(KeyCode.W))
         {
-            animator.SetBool("jumping", true);
-            rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
-        }    
+            if(Mathf.Abs(rb.velocity.y) < 0.05f || doubleJump)
+            {
+                animator.SetBool("jumping", true);
+                rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+
+                doubleJump = !doubleJump;
+            }
+        }
+
         else if (Mathf.Abs(rb.velocity.y) == 0f)
         {
             animator.SetBool("jumping", false);
+
+            doubleJump = false;
         }
     }
 }
