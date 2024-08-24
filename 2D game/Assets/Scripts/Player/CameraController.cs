@@ -9,6 +9,8 @@ public class CameraController : MonoBehaviour
 
     void Start()
     {
+        Cursor.lockState = CursorLockMode.Locked;
+
         offset = transform.position - player.transform.position;
     }
 

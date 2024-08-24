@@ -7,6 +7,13 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; set; }
 
+    [Header("Background")]
+
+    public AudioSource backgroundChanell;
+    public AudioClip backroundMusic;
+
+    [Header("Coins")]
+
     public AudioSource coinsChanell;
     public AudioClip pickUpCoin;
 
