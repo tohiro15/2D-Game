@@ -67,6 +67,7 @@ public class PlayerController : MonoBehaviour
             {
                 animator.SetBool("jumping", true);
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
+                SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.jumpSound);
 
                 doubleJump = !doubleJump;
             }
@@ -78,5 +79,6 @@ public class PlayerController : MonoBehaviour
 
             doubleJump = false;
         }
+
     }
 }

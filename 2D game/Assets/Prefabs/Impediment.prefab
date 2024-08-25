@@ -178,6 +178,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2861129728089741212}
   - component: {fileID: 868278470095032656}
+  - component: {fileID: 2459887879340381305}
   - component: {fileID: 1235590925336556393}
   - component: {fileID: 1869453613476862103}
   - component: {fileID: 2835550439127053152}
@@ -257,6 +258,18 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &2459887879340381305
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388954261187456166}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e297206410a1eeb4a97b8db6e8217d58, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!61 &1235590925336556393
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -425,7 +438,7 @@ GameObject:
   - component: {fileID: 5686165894028420106}
   m_Layer: 0
   m_Name: Impediment
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

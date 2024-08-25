@@ -7,6 +7,12 @@ public class SoundManager : MonoBehaviour
 {
     public static SoundManager instance { get; set; }
 
+
+    [Header("Player")]
+
+    public AudioSource playerChanell;
+    public AudioClip jumpSound;
+
     [Header("Background")]
 
     public AudioSource backgroundChanell;
