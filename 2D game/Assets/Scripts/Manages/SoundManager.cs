@@ -12,6 +12,7 @@ public class SoundManager : MonoBehaviour
 
     public AudioSource playerChanell;
     public AudioClip jumpSound;
+    public AudioClip deathSound;
 
     [Header("Background")]
 

@@ -6,11 +6,12 @@ public class Player : MonoBehaviour
 {
     public static Player instance { get; set; }
 
+    public GameObject[] hearts;
     public int maxHealth = 3;
     public int health;
 
-    public GameObject[] hearts;
-
+    public Rigidbody2D rb;
+    public float damageForce = 6f;
     public int damageCount = 1;
 
     private void Awake()
@@ -23,21 +24,26 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        rb = GetComponent<Rigidbody2D>();
         health = 3;
     }
 
-    public void TakeDamage()
+    public async void TakeDamage()
     {
         health -= damageCount;
-
         hearts[health].SetActive(false);
 
-        if(health <= 0)
+        if (health <= 0)
         {
-            gameObject.GetComponent<PlayerController>().enabled = false;
-
-            UIManager.instance.Menus.SetActive(true);
-            UIManager.instance.Panels.SetActive(false);
+            GetComponent<Death>().enabled = true;
+            SoundManager.instance.backgroundChanell.Stop();
+            SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.deathSound);
         }
+        else
+        {
+            rb.velocity = new Vector2(0, 0) * Time.deltaTime;
+            rb.AddForce(new Vector2(-1, damageForce), ForceMode2D.Impulse);
+        }
+
     }
 }

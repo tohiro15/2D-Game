@@ -9,7 +9,9 @@ public class Impediment : MonoBehaviour
     {
         if (collision.CompareTag("Player"))
         {
+
             Player.instance.TakeDamage();
         }
+
     }
 }

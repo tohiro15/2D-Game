@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8501396425512652868}
   - component: {fileID: 8540551726636123894}
+  - component: {fileID: 6199775733210596362}
   - component: {fileID: 8901194927696487114}
   - component: {fileID: 6932560998677064717}
   - component: {fileID: 4446579449045468413}
@@ -49,13 +50,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c27931f6062f37a418ea9a6c60560cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 3
-  health: 0
   hearts:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  maxHealth: 3
+  health: 0
+  rb: {fileID: 0}
+  damageForce: 6
   damageCount: 1
+--- !u!114 &6199775733210596362
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5548566224591090216}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8bb0753910464f7458ddd6141e906940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &8901194927696487114
 SpriteRenderer:
   m_ObjectHideFlags: 0
