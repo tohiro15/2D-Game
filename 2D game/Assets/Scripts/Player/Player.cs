@@ -28,7 +28,7 @@ public class Player : MonoBehaviour
         health = 3;
     }
 
-    public async void TakeDamage()
+    public void TakeDamage()
     {
         health -= damageCount;
         hearts[health].SetActive(false);
@@ -41,6 +41,7 @@ public class Player : MonoBehaviour
         }
         else
         {
+            SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.damageSound);
             rb.velocity = new Vector2(0, 0) * Time.deltaTime;
             rb.AddForce(new Vector2(-1, damageForce), ForceMode2D.Impulse);
         }
