@@ -8,7 +8,7 @@ public class UIManager : MonoBehaviour
     public static UIManager instance { get; set; }
 
     public GameObject Panels;
-    public GameObject Menus;
+    public GameObject DeathMenu;
     public Image BackgroundDeath;
     public Color ImageColor;
     public float SpeedDeath = 5f;
@@ -29,7 +29,7 @@ public class UIManager : MonoBehaviour
 
     public void Death()
     {
-        Menus.SetActive(true);
+        DeathMenu.SetActive(true); 
         Panels.SetActive(false);
 
 

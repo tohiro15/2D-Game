@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Drawing;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -36,6 +37,7 @@ public class Player : MonoBehaviour
         if (health <= 0)
         {
             GetComponent<Death>().enabled = true;
+            CoinCount.instance.DeathUI();
             SoundManager.instance.backgroundChanell.Stop();
             SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.deathSound);
         }
