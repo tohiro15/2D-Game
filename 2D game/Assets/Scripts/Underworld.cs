@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Impediment : MonoBehaviour
+public class Underworld : MonoBehaviour
 {
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.CompareTag("Player"))
+        if(collision.CompareTag("Player"))
         {
-                Player.instance.TakeDamage();
+            Player.instance.health = 0;
+            Player.instance.Death();
         }
-
     }
 }

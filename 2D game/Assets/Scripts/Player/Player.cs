@@ -32,21 +32,32 @@ public class Player : MonoBehaviour
     public void TakeDamage()
     {
         health -= damageCount;
-        hearts[health].SetActive(false);
-
         if (health <= 0)
         {
-            GetComponent<Death>().enabled = true;
-            CoinCount.instance.DeathUI();
-            SoundManager.instance.backgroundChanell.Stop();
-            SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.deathSound);
+            Death();
         }
         else
         {
+
+            hearts[health].SetActive(false);
+
             SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.damageSound);
+
             rb.velocity = new Vector2(0, 0) * Time.deltaTime;
             rb.AddForce(new Vector2(-1, damageForce), ForceMode2D.Impulse);
         }
 
     }
+
+    public void Death()
+    {
+        if (health <= 0)
+        {
+            GetComponent<PlayerController>().enabled = false;
+            GetComponent<Death>().enabled = true;
+            CoinCount.instance.DeathUI();
+            SoundManager.instance.backgroundChanell.Stop();
+            SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.deathSound);
+        }
+    }    
 }
