@@ -8,6 +8,8 @@ public class CoinCount : MonoBehaviour
     public static CoinCount instance { get; set; }
 
     public int moneyNumbers;
+    public int currentMoneyNumbers;
+
     public TextMeshProUGUI coins;
     public Color color;
 
@@ -18,6 +20,7 @@ public class CoinCount : MonoBehaviour
         else
             instance = this;
     }
+
 
     private void Start()
     {

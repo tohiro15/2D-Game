@@ -38,7 +38,6 @@ public class Player : MonoBehaviour
         }
         else
         {
-
             hearts[health].SetActive(false);
 
             SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.damageSound);
@@ -53,9 +52,13 @@ public class Player : MonoBehaviour
     {
         if (health <= 0)
         {
+            GetComponent<Collider2D>().enabled = false;
             GetComponent<PlayerController>().enabled = false;
             GetComponent<Death>().enabled = true;
+
             CoinCount.instance.DeathUI();
+
+
             SoundManager.instance.backgroundChanell.Stop();
             SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.deathSound);
         }
