@@ -56,9 +56,6 @@ public class Player : MonoBehaviour
             GetComponent<PlayerController>().enabled = false;
             GetComponent<Death>().enabled = true;
 
-            CoinCount.instance.DeathUI();
-
-
             SoundManager.instance.backgroundChanell.Stop();
             SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.deathSound);
         }

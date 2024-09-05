@@ -11,7 +11,6 @@ public class CoinCount : MonoBehaviour
     public int currentMoneyNumbers;
 
     public TextMeshProUGUI coins;
-    public Color color;
 
     private void Awake()
     {
@@ -25,13 +24,5 @@ public class CoinCount : MonoBehaviour
     private void Start()
     {
         moneyNumbers = 0;
-        coins = GetComponent<TextMeshProUGUI>();
-    }
-
-    public void DeathUI()
-    {
-        color = coins.color;
-        color.a = 255;
-        coins.color = color;
     }
 }

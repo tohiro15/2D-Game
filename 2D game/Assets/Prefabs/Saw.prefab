@@ -180,7 +180,6 @@ GameObject:
   - component: {fileID: 868278470095032656}
   - component: {fileID: 2459887879340381305}
   - component: {fileID: 1869453613476862103}
-  - component: {fileID: 2835550439127053152}
   - component: {fileID: 5668601404154977491}
   - component: {fileID: 7201619307893743735}
   - component: {fileID: 4872864088732651285}
@@ -271,6 +270,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e297206410a1eeb4a97b8db6e8217d58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  speed: 5
+  points:
+  - {fileID: 47056106432243740}
+  - {fileID: 217276133105141101}
 --- !u!50 &1869453613476862103
 Rigidbody2D:
   serializedVersion: 4
@@ -298,22 +301,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &2835550439127053152
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1388954261187456166}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10ca4e7bf53af6d4bae919c1cb602249, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 6
-  points:
-  - {fileID: 47056106432243740}
-  - {fileID: 217276133105141101}
 --- !u!95 &5668601404154977491
 Animator:
   serializedVersion: 5
@@ -463,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5686165894028420106}
   m_Layer: 0
-  m_Name: Impediment
+  m_Name: Saw
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -6,8 +6,6 @@ public class SaveLoadManager : MonoBehaviour
 {
     public static SaveLoadManager instance { get; set; }
 
-    string CoinsKey = "NumberOfCoinsPicked";
-
     private void Awake()
     {
         if (instance != null && instance != this)
