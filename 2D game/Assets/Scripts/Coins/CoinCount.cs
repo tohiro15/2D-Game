@@ -7,8 +7,7 @@ public class CoinCount : MonoBehaviour
 {
     public static CoinCount instance { get; set; }
 
-    public int moneyNumbers;
-    public int currentMoneyNumbers;
+    private int moneyNumbers;
 
     public TextMeshProUGUI coins;
 
@@ -24,5 +23,13 @@ public class CoinCount : MonoBehaviour
     private void Start()
     {
         moneyNumbers = 0;
+    }
+
+    public void PickUpCoin()
+    {
+        moneyNumbers += 1;
+        coins.text = $"COINS: {CoinCount.instance.moneyNumbers.ToString()}";
+
+        SoundManager.instance.coinsChanell.PlayOneShot(SoundManager.instance.pickUpCoin);
     }
 }

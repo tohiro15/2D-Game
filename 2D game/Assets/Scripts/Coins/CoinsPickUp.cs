@@ -11,15 +11,8 @@ public class CoinsPickUp : MonoBehaviour
     {
         if(collision.CompareTag("Player"))
         {
-            PickUpCoin();
+            CoinCount.instance.PickUpCoin();
             Destroy(gameObject);
         }
-    }
-    public void PickUpCoin()
-    {
-        CoinCount.instance.moneyNumbers += 1;
-        CoinCount.instance.coins.text = $"COINS: {CoinCount.instance.moneyNumbers.ToString()}";
-
-        SoundManager.instance.coinsChanell.PlayOneShot(SoundManager.instance.pickUpCoin);
     }
 }
