@@ -11,14 +11,13 @@ public class LoadMenu : MonoBehaviour
 
     public AudioSource BackgroundMusic;
 
-    string NewGameScene = "SampleScene";
+    private string NewGameScene = "SampleScene";
     public void Loading()
     {
         BackgroundMusic.Stop();
 
         MainMenu.SetActive(false);
         LoadingMenu.SetActive(true);
-
 
         StartCoroutine(LoadAsync());
     }

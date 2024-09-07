@@ -6,7 +6,6 @@ using UnityEngine;
 
 public class CoinsPickUp : MonoBehaviour
 {
-
     public void OnTriggerEnter2D(Collider2D collision)
     {
         if(collision.CompareTag("Player"))

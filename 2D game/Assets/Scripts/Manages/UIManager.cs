@@ -9,9 +9,12 @@ public class UIManager : MonoBehaviour
 
     public GameObject Panels;
     public GameObject DeathMenu;
+
     public Image BackgroundDeath;
+
     public Color ImageColor;
-    public float SpeedDeath = 5f;
+
+    private float SpeedDeath = 5f;
 
     private void Awake()
     {

@@ -5,14 +5,30 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    string MainMenuScene = "MainMenu";
+    private string MainMenuScene = "MainMenu";
+
+    public GameObject EscapeMenu;
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if(Input.GetKeyUp(KeyCode.Escape))
         {
-            Cursor.lockState = CursorLockMode.Confined;
-            SceneManager.LoadScene(MainMenuScene);
+            OpenEscapeMenu();
         }
+    }
+
+    public void OpenEscapeMenu()
+    {
+        Cursor.lockState = CursorLockMode.Confined;
+        EscapeMenu.SetActive(true);
+    }
+    public void CancelEscapeMenu()
+    {
+        Cursor.lockState = CursorLockMode.Locked;
+        EscapeMenu.SetActive(false);
+    }
+    public void ExitGame()
+    {
+            SceneManager.LoadScene(MainMenuScene);
     }
 }

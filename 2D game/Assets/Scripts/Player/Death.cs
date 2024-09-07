@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class Death : MonoBehaviour
 {
-
     void Update()
     {
         UIManager.instance.Death();

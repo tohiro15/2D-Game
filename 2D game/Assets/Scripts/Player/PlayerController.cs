@@ -5,8 +5,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Attributes")]
-    public float playerSpeed = 5f;
-    public float jumpForce = 5f;
+    private float playerSpeed = 5f;
+    private float jumpForce = 5f;
 
     [Header("Components")]
     public Rigidbody2D rb;
@@ -14,9 +14,9 @@ public class PlayerController : MonoBehaviour
     public Animator animator;
 
     [Header("Boolean values")]
-    public bool isRunning;
+    private bool isRunning;
     public bool isLeft;
-    public bool doubleJump = false;
+    private bool doubleJump = false;
 
     private void Start()
     {
