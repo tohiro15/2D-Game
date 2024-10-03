@@ -18,11 +18,6 @@ public class PlayerController : MonoBehaviour
     public bool isLeft;
     private bool doubleJump = false;
 
-    private void Start()
-    {
-        animator.SetBool("jumping", false);
-    }
-
     private void Update()
     {
         Movement();
@@ -65,7 +60,7 @@ public class PlayerController : MonoBehaviour
         {
             if(Mathf.Abs(rb.velocity.y) < 0.05f || doubleJump)
             {
-                animator.SetBool("jumping", true);
+                //animator.SetBool("jumping", true);
                 rb.AddForce(new Vector2(0, jumpForce), ForceMode2D.Impulse);
                 SoundManager.instance.playerChanell.PlayOneShot(SoundManager.instance.jumpSound);
 
@@ -75,7 +70,7 @@ public class PlayerController : MonoBehaviour
 
         else if (Mathf.Abs(rb.velocity.y) == 0f)
         {
-            animator.SetBool("jumping", false);
+            //animator.SetBool("jumping", false);
 
             doubleJump = false;
         }

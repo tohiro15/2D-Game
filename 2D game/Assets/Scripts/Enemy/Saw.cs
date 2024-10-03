@@ -9,13 +9,7 @@ public class Saw : MonoBehaviour
     private int index;
 
     public Transform[] points;
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.CompareTag("Player"))
-        {
-            Player.instance.TakeDamage();
-        }
-    }
+
     private void Start()
     {
         index = Random.Range(0, points.Length);
